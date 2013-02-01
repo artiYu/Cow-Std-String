@@ -9,9 +9,15 @@ public:
   String (const String &str_sz);
   virtual operator const char * () const = 0;
   
-  virtual char& operator [] (int index) = 0;
-  virtual const char operator [] (int index) const = 0;
+  virtual char& operator [] (int index);
+  const char operator [] (int index) const;
   virtual void operator += (const char *_sz)  = 0;
+
+  bool operator == (String &str_sz) const;
+  bool operator < (String &str_sz) const;
+  bool operator > (String &str_sz) const;
+  bool operator <= (String &str_sz) const;
+  bool operator >= (String &str_sz) const;
 
 protected:
   char *sz;

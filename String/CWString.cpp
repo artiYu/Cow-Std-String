@@ -52,10 +52,6 @@ char& CWString::operator[] (int index) {
   return pCountRef->sz[index];
 }
 
-const char CWString::operator [] (int index) const {
-  return pCountRef->sz[index];
-}
-
 CWString::operator const char * () const {
   return pCountRef->sz;
 }

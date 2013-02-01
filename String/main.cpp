@@ -47,7 +47,7 @@ TEST (ThirdTest, Constructors) {
   EXPECT_STREQ ("Perpetuum mobile", s4);
 }
 
-TEST (ForthTest, CheckOfSquareBracketsForString) {
+TEST (ForthTest, CheckOfSquareBracketsForAllString) {
   String *s1 = String::create(String::type::std_sz, "Perpetuum mobile");
   String *s2 = String::create(String::type::cow, "Da Vinci");
   int len = strlen (*s1);
@@ -69,6 +69,20 @@ TEST (FifthTest, Arithmetics) {
 
   EXPECT_STREQ ("Perpetuum mobile", *s1);
   EXPECT_STREQ ("Da Vinci Perpetuum mobile", *s2);
+}
+
+TEST (SixthTest, Comparison) {
+  String *s1 = String::create(String::type::std_sz, "Perpetuum");
+  String *s2 = String::create(String::type::cow, "Vinci");
+  String *s3 = String::create(String::type::std_sz, "Perpetuum mobile");
+  String *s4 = String::create(String::type::cow, "Perpetuum");
+  cout << strcmp("D", "C") << endl;
+  EXPECT_FALSE (*s1 == *s3);
+  EXPECT_TRUE (*s1 == *s4);
+  EXPECT_TRUE (*s2 > *s3);
+  EXPECT_FALSE (*s2 < *s4);
+  EXPECT_TRUE (*s1 >= *s4);
+  EXPECT_FALSE (*s2 <= "Da Vinci");
 }
 
 GTEST_API_ int main(int argc, char **argv) {

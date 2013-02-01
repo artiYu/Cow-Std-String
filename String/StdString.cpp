@@ -23,14 +23,6 @@ const StdString& StdString::operator = (const StdString &std_sz) {
   return *this;            
 }
 
-char& StdString::operator[] (int index) {
-  return sz[index];
-}
-
-const char StdString::operator [] (int index) const {
-  return sz[index];
-}
-
 StdString::operator const char * () const {
   return sz;
 }

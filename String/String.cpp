@@ -22,3 +22,31 @@ String* String::create (int type, char *sz) {
   case type::cow: return new CWString (sz);
   }
 }
+
+char& String::operator[](int index) {
+  return sz[index];
+}
+
+const char String::operator[](int index) const {
+  return sz[index];
+}
+
+bool String::operator == (String &str_sz) const {
+  return !strcmp(*this, str_sz) ? true : false;
+}
+
+bool String::operator < (String &str_sz) const {
+  return strcmp(*this, str_sz) < 0 ? true : false;
+}
+
+bool String::operator > (String &str_sz) const {
+  return strcmp(*this, str_sz) > 0 ? true : false;
+}
+
+bool String::operator <= (String &str_sz) const {
+  return (strcmp(*this, str_sz) <= 0) ? true : false;
+}
+
+bool String::operator >= (String &str_sz) const {
+  return (strcmp(*this, str_sz) >= 0) ? true : false;
+}
