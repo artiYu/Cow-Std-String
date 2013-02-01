@@ -9,12 +9,12 @@ public:
 	virtual ~StdString ();
 	const StdString& operator = (const StdString &std_sz);
 
-	void operator += (const char *sz);
+	virtual void operator += (const char *sz);
 	friend StdString operator + (const char *, const StdString &std_sz);
 
 	virtual char& operator[] (int index);
   virtual const char operator [] (int index) const;
-	operator const char* () const;
+	virtual operator const char* () const;
 	operator StdString* () const;
 
 	friend std::istream& operator >> (std::istream &in, StdString &std_sz);

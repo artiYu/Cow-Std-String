@@ -17,12 +17,12 @@ class CWString : public String {
 
     const CWString& operator = (const CWString &ns);
 
-    void operator += (const char *sz);
+    virtual void operator += (const char *sz);
     friend CWString operator + (const char *, const CWString &ns);
     
     virtual char& operator[] (int index);
     virtual const char operator[] (int index) const;
-    operator const char* () const;
+    virtual operator const char* () const;
     operator CWString* () const;
 
     friend std::istream& operator >> (std::istream &in, CWString &ns);
