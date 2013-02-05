@@ -27,14 +27,6 @@ StdString::operator const char * () const {
   return sz;
 }
 
-void StdString::operator += (const char *_sz) {
-  char *new_sz = new char [strlen (sz) + strlen (_sz) + 1];
-  strcpy (new_sz, sz);
-  strcat (new_sz, _sz);
-  delete[] sz;
-  sz = new_sz;
-}
-
 StdString operator + (const char *_sz, const StdString &std_sz) {
   StdString temp (_sz);
   temp += std_sz;

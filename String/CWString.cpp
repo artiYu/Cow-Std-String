@@ -57,19 +57,13 @@ CWString::operator const char * () const {
 }
 
 void CWString::operator += (const char *_sz) {
-  if (pCountRef->count > 1) {
-    CountReferences *new_ref = new CountReferences (pCountRef->sz);
-    --pCountRef->count;
-    pCountRef = new_ref;
-  }
-
-  char *new_sz = new char [strlen (pCountRef->sz) + strlen (_sz) + 1];
-  strcpy (new_sz, pCountRef->sz);
-  strcat (new_sz, _sz);
-  delete[] pCountRef->sz;
-  pCountRef->sz = new_sz;
+    if (pCountRef->count > 1) {
+      CountReferences *new_ref = new CountReferences (pCountRef->sz);
+      --pCountRef->count;
+      pCountRef = new_ref;
+    }
+    this->String::operator += (_sz);
 }
-
 
 CWString operator + (const char *sz, const CWString &ns1) {
   CWString ns (sz);

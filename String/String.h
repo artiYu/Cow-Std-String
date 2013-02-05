@@ -11,7 +11,7 @@ public:
   
   virtual char& operator [] (int index);
   const char operator [] (int index) const;
-  virtual void operator += (const char *_sz)  = 0;
+  virtual void operator += (const char *_sz);
 
   bool operator == (String &str_sz) const;
   bool operator < (String &str_sz) const;

@@ -9,7 +9,6 @@ public:
 	virtual ~StdString ();
 	const StdString& operator = (const StdString &std_sz);
 
-	virtual void operator += (const char *sz);
 	friend StdString operator + (const char *, const StdString &std_sz);
 
 	virtual operator const char* () const;
