@@ -1,6 +1,7 @@
 #include "String.h"
 #include "CWString.h"
 #include "StdString.h"
+#include <cstring>
 
 String::String (const char *_sz) {
   sz = new char[strlen(_sz) + 1];
@@ -16,10 +17,10 @@ String::~String() {
   return;
 }
 
-String* String::create (int type, char *sz) {
+String* String::create (Type type, const char *sz) {
   switch (type) {
-  case type::std_sz: return new StdString (sz);
-  case type::cow: return new CWString (sz);
+    case std_sz: return new StdString (sz);
+    case cow: return new CWString (sz);
   }
 }
 
