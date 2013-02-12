@@ -1,9 +1,9 @@
 class String {
 public:
-  enum type {std_sz, cow};
+  enum Type {std_sz, cow};
 
   virtual ~String();
-  static String* create (int type, char *sz = "");
+  static String* create (Type type, char *sz = "");
 
   String (const char *_sz = "");
   String (const String &str_sz);

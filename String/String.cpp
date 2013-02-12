@@ -17,10 +17,10 @@ String::~String() {
   return;
 }
 
-String* String::create (int type, char *sz) {
+String* String::create (Type type, char *sz) {
   switch (type) {
-  case type::std_sz: return new StdString (sz);
-  case type::cow: return new CWString (sz);
+    case std_sz: return new StdString (sz);
+    case cow: return new CWString (sz);
   }
 }
 
