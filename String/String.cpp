@@ -1,6 +1,7 @@
 #include "String.h"
 #include "CWString.h"
 #include "StdString.h"
+#include <cstring>
 
 String::String (const char *_sz) {
   sz = new char[strlen(_sz) + 1];

@@ -2,7 +2,7 @@
 #include "String.h"
 #include "StdString.h"
 #include <string>
-
+#include <cstring>
 
 StdString::StdString (const char* _sz) : String(_sz) {}
 
