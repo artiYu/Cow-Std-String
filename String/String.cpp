@@ -17,7 +17,7 @@ String::~String() {
   return;
 }
 
-String* String::create (Type type, char *sz) {
+String* String::create (Type type, const char *sz) {
   switch (type) {
     case std_sz: return new StdString (sz);
     case cow: return new CWString (sz);
