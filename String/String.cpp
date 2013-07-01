@@ -18,8 +18,10 @@ String::~String() {
 
 String* String::create (int type, char *sz) {
   switch (type) {
-  case type::std_sz: return new StdString (sz);
-  case type::cow: return new CWString (sz);
+    case type::std_sz: 
+      return new StdString (sz);
+    case type::cow: 
+      return new CWString (sz);
   }
 }
 

@@ -62,7 +62,12 @@ void CWString::operator += (const char *_sz) {
       --pCountRef->count;
       pCountRef = new_ref;
     }
-    this->String::operator += (_sz);
+    //this->String::operator += (_sz); // почему так нельзя вместо следующих 5 строчек? - не понимаю. 
+    char *new_sz = new char [strlen (pCountRef->sz) + strlen (_sz) + 1];
+    strcpy (new_sz, pCountRef->sz);
+    strcat (new_sz, _sz);
+    delete[] pCountRef->sz;
+    pCountRef->sz = new_sz;
 }
 
 CWString operator + (const char *sz, const CWString &ns1) {
