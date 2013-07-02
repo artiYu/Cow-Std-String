@@ -48,30 +48,38 @@ TEST (ThirdTest, Constructors) {
 }
 
 TEST (ForthTest, CheckOfSquareBracketsForAllString) {
-	String *s1 = String::create(String::type::std_sz, "Perpetuum mobile");
-	String *s2 = String::create(String::type::cow, "Da Vinci");
+	//String *s1 = String::create(String::type::std_sz, "Perpetuum mobile");
+	//String *s2 = String::create(String::type::cow, "Da Vinci");
 
-	/*int len = strlen (*s1);
-	for (int i = 1; i < len; i += 2)
-		(*s1)[i] = ' ';
-	len = strlen(*s2);
-	for (int i = 1; i < len; i += 2)
-		(*s2)[i] = '*';*/
+  StdString s1 = "Perpetuum mobile";
+  CWString s2 = "Da Vinci";
 
-	//EXPECT_STREQ ("P r e u m m b l ", *s1);
-	//EXPECT_STREQ ("D* *i*c*", *s2);
-	EXPECT_TRUE ((*s2)[0] == 'D');
+  int len = strlen(s1);
+
+	for (int i = 1; i < len; i += 2)
+    s1[i] = ' ';
+
+  len = strlen(s2);
+	for (int i = 1; i < len; i += 2)
+    s2[i] = '*';
+
+  EXPECT_STREQ("P r e u m m b l ", s1);
+  EXPECT_STREQ("D* *i*c*", s2);
+  EXPECT_TRUE(s2[0] == 'D');
 }
 
 TEST (FifthTest, Arithmetics) {
-	String *s1 = String::create(String::type::std_sz, "Perpetuum");
-	String *s2 = String::create(String::type::cow, "Da Vinci ");
+	//String *s1 = String::create(String::type::std_sz, "Perpetuum");
+	//String *s2 = String::create(String::type::cow, "Da Vinci ");
 	
-//	*s1 += " mobile";
-//	*s2 += *s1;
+  StdString s1 = "Perpetuum";
+  CWString s2 = "Da Vinci ";
 
- 	EXPECT_STREQ ("Perpetuum mobile", *s1);
-	EXPECT_STREQ ("Da Vinci Perpetuum mobile", *s2);
+	s1 += " mobile";
+	s2 += s1;
+
+ 	EXPECT_STREQ ("Perpetuum mobile", s1);
+	EXPECT_STREQ ("Da Vinci Perpetuum mobile", s2);
 }
 
 TEST (SixthTest, Comparison) {
