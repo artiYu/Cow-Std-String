@@ -1,14 +1,14 @@
 #pragma once
 #include <iostream>
 
-class CWString : public String {    
-  class  CountReferences {                                
+class CWString : public String {
+  class  CountReferences {
     public:
       CountReferences (const char *sz);
       virtual ~CountReferences ();
-      int count;               
+      int count;
       char* sz;
-  };     
+  };
 
   public:
     CWString (const char *str = "");
@@ -19,7 +19,7 @@ class CWString : public String {
 
     const CWString& operator += (const char *sz);
     friend CWString operator + (const char *, const CWString &ns);
-    
+
     char& operator[] (int index);
     operator const char* () const;
     operator CWString* () const;

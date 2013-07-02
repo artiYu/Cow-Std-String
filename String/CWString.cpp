@@ -5,16 +5,16 @@
 
 CWString::CountReferences::CountReferences (const char *_sz) {
   sz = new char[strlen(_sz) + 1];
-  strcpy (sz, _sz); 
-  count = 1;              
+  strcpy (sz, _sz);
+  count = 1;
 }
 
-CWString::CountReferences::~CountReferences () { 
-  delete[] sz; 
-}       
+CWString::CountReferences::~CountReferences () {
+  delete[] sz;
+}
 
-CWString::CWString (const char* sz) { 
-  pCountRef = new CountReferences (sz); 
+CWString::CWString (const char* sz) {
+  pCountRef = new CountReferences (sz);
 }
 
 CWString::CWString (const CWString &ns) {
@@ -23,24 +23,24 @@ CWString::CWString (const CWString &ns) {
 }
 
 CWString::~CWString () {
-  if (pCountRef->count == 1)       
-    delete pCountRef;            
-  else                    
-    pCountRef->count--;       
+  if (pCountRef->count == 1)
+    delete pCountRef;
+  else
+    pCountRef->count--;
 }
 
 const CWString& CWString::operator = (const CWString& ns) {
   if (pCountRef == ns.pCountRef)
-  	return *this;
+    return *this;
 
-  if (pCountRef->count == 1)        
-    delete pCountRef;         
-  else  
-    pCountRef->count--;    
+  if (pCountRef->count == 1)
+    delete pCountRef;
+  else
+    pCountRef->count--;
 
-  pCountRef = ns.pCountRef;         
-  pCountRef->count++;       
-  return *this;            
+  pCountRef = ns.pCountRef;
+  pCountRef->count++;
+  return *this;
 }
 
 char& CWString::operator[] (int index) {

@@ -26,7 +26,7 @@ const StdString& StdString::operator = (const StdString &std_sz) {
   sz = new char[strlen(std_sz.sz) + 1];
   strcpy (sz, std_sz.sz);
 
-  return *this;            
+  return *this;
 }
 
 StdString::operator const char * () const {
@@ -40,7 +40,7 @@ char& StdString::operator[](int index) {
 const char StdString::operator[](int index) const {
   return sz[index];
 }
-  
+
 const StdString& StdString::operator += (const char *std_sz) {
   char *new_sz = new char [strlen (sz) + strlen (std_sz) + 1];
   strcpy (new_sz, sz);

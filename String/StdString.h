@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-class StdString : public String {       
+class StdString : public String {
 
 public:
   StdString (const char *std_sz = "");
