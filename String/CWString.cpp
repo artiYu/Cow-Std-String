@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "String.h"
 #include "CWString.h"
-#include <string>
+#include <cstring>
 
 CWString::CountReferences::CountReferences (const char *_sz) {
   sz = new char[strlen(_sz) + 1];
