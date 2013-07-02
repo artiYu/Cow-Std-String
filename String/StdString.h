@@ -11,7 +11,6 @@ public:
 
   friend StdString operator + (const char *, const StdString &std_sz);
   const StdString& operator += (const char *std_sz);
-
   operator const char* () const;
   operator StdString* () const;
   char& operator[](int index);
