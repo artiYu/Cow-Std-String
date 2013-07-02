@@ -10,14 +10,14 @@ using std::cout;
 using std::endl;
 
 TEST (FirstTest, Assignments) {
-  String *s1 = String::create(String::type::cow, "s1");
-  String *s2 = String::create(String::type::std_sz);
+  String *s1 = String::create(String::cow, "s1");
+  String *s2 = String::create(String::std_sz);
   s2 = s1;
   s1 = s1;
   s2 = s2;
 
-  String *s3 = String::create(String::type::std_sz, "s3");
-  String *s4 = String::create(String::type::std_sz, "s4");
+  String *s3 = String::create(String::std_sz, "s3");
+  String *s4 = String::create(String::std_sz, "s4");
   s3 = s1;
   s4 = s3;
 
@@ -76,10 +76,10 @@ TEST (FifthTest, Arithmetics) {
 }
 
 TEST (SixthTest, Comparison) {
-  String *s1 = String::create(String::type::std_sz, "Perpetuum");
-  String *s2 = String::create(String::type::cow, "Vinci");
-  String *s3 = String::create(String::type::std_sz, "Perpetuum mobile");
-  String *s4 = String::create(String::type::cow, "Perpetuum");
+  String *s1 = String::create(String::std_sz, "Perpetuum");
+  String *s2 = String::create(String::cow, "Vinci");
+  String *s3 = String::create(String::std_sz, "Perpetuum mobile");
+  String *s4 = String::create(String::cow, "Perpetuum");
   EXPECT_FALSE (*s1 == *s3);
   EXPECT_TRUE (*s1 == *s4);
   EXPECT_TRUE (*s2 > *s3);
