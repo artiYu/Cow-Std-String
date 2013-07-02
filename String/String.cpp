@@ -33,12 +33,13 @@ const char String::operator[](int index) const {
   return sz[index];
 }
 
-void String::operator += (const char *_sz) {
+String& String::operator += (const char *_sz) {
   char *new_sz = new char [strlen (sz) + strlen (_sz) + 1];
   strcpy (new_sz, sz);
   strcat (new_sz, _sz);
   delete[] sz;
   sz = new_sz;
+  return *this;
 }
 
 bool String::operator == (String &str_sz) const {

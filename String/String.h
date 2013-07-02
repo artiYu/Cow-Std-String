@@ -13,7 +13,7 @@ public:
   virtual char& operator [] (int index);
   virtual const char operator [] (int index) const;
 
-  virtual void operator += (const char *_sz);
+  virtual String& operator += (const char *_sz);
   
   virtual bool operator == (String &str_sz) const;
   virtual bool operator < (String &str_sz) const;

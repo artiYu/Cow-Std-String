@@ -17,7 +17,7 @@ class CWString : public String {
 
     const CWString& operator = (const CWString &ns);
 
-    virtual void operator += (const char *sz);
+    virtual CWString& operator += (const char *sz);
     friend CWString operator + (const char *, const CWString &ns);
     
     virtual char& operator[] (int index);
