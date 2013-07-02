@@ -85,7 +85,7 @@ TEST (SixthTest, Comparison) {
   EXPECT_TRUE (*s2 > *s3);
   EXPECT_FALSE (*s2 < *s4);
   EXPECT_TRUE (*s1 >= *s4);
-  EXPECT_FALSE ("Da Vinci" <= *s2);
+  EXPECT_TRUE ("Da Vinci" <= *s2);
 }
 
 GTEST_API_ int main(int argc, char **argv) {
