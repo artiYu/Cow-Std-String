@@ -13,15 +13,15 @@ class CWString : public String {
   public:
     CWString (const char *str = "");
     CWString (const CWString &ns);
-    virtual ~CWString ();
+    ~CWString ();
 
     const CWString& operator = (const CWString &ns);
 
-    virtual CWString& operator += (const char *sz);
+    const CWString& operator += (const char *sz);
     friend CWString operator + (const char *, const CWString &ns);
     
-    virtual char& operator[] (int index);
-    virtual operator const char* () const;
+    char& operator[] (int index);
+    operator const char* () const;
     operator CWString* () const;
 
     friend std::istream& operator >> (std::istream &in, CWString &ns);

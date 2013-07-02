@@ -56,7 +56,7 @@ CWString::operator const char * () const {
   return pCountRef->sz;
 }
 
-CWString& CWString::operator += (const char *_sz) {
+const CWString& CWString::operator += (const char *_sz) {
     if (pCountRef->count > 1) {
       CountReferences *new_ref = new CountReferences (pCountRef->sz);
       --pCountRef->count;
