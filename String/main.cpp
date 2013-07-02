@@ -27,13 +27,13 @@ TEST (FirstTest, Assignments) {
 	EXPECT_STREQ ("s1", *s4);
 }
 
-//TEST (SecondTest, CheckOfSquareBracketsForStdString) {
-//	String *s1 = String::create(String::type::std_sz, "Perpetuum mobile");
-//	int len = strlen (*s1);
-//	for (int i = 1; i < len; i += 2)
-//		(*s1)[i] = ' ';
-//	EXPECT_STREQ ("P r e u m m b l ", *s1);
-//}
+TEST (SecondTest, CheckOfSquareBracketsForStdString) {
+	StdString s1 = "Perpetuum mobile";
+	int len = strlen (s1);
+	for (int i = 1; i < len; i += 2)
+		s1[i] = ' ';
+	EXPECT_STREQ ("P r e u m m b l ", s1);
+}
 
 TEST (ThirdTest, Constructors) {
 	StdString s1 = "Perpetuum mobile", s2, s3 (s1);
@@ -48,9 +48,6 @@ TEST (ThirdTest, Constructors) {
 }
 
 TEST (ForthTest, CheckOfSquareBracketsForAllString) {
-	//String *s1 = String::create(String::type::std_sz, "Perpetuum mobile");
-	//String *s2 = String::create(String::type::cow, "Da Vinci");
-
   StdString s1 = "Perpetuum mobile";
   CWString s2 = "Da Vinci";
 
@@ -69,9 +66,6 @@ TEST (ForthTest, CheckOfSquareBracketsForAllString) {
 }
 
 TEST (FifthTest, Arithmetics) {
-	//String *s1 = String::create(String::type::std_sz, "Perpetuum");
-	//String *s2 = String::create(String::type::cow, "Da Vinci ");
-	
   StdString s1 = "Perpetuum";
   CWString s2 = "Da Vinci ";
 
