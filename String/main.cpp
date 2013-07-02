@@ -52,7 +52,6 @@ TEST (ForthTest, CheckOfSquareBracketsForAllString) {
   CWString s2 = "Da Vinci";
 
   int len = strlen(s1);
-
 	for (int i = 1; i < len; i += 2)
     s1[i] = ' ';
 
