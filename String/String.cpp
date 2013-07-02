@@ -8,7 +8,7 @@ String::~String() {
   return;
 }
 
-String* String::create (int type, char *sz) {
+String* String::create (int type, const char *sz) {
   switch (type) {
     case std_sz:
       return new StdString (sz);

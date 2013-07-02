@@ -3,7 +3,7 @@ public:
   enum type {std_sz, cow};
 
   virtual ~String();
-  static String* create (int type, char *sz = "");
+  static String* create (int type, const char *sz = "");
 
   virtual operator const char * () const = 0;
 
