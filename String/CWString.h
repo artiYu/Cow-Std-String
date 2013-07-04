@@ -21,6 +21,7 @@ class CWString : public String {
     friend CWString operator + (const char *, const CWString &ns);
 
     char& operator[] (int index);
+    const char operator[](int index) const;
     operator const char* () const;
     operator CWString* () const;
 

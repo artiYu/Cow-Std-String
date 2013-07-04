@@ -52,6 +52,10 @@ char& CWString::operator[] (int index) {
   return pCountRef->sz[index];
 }
 
+const char CWString::operator[](int index) const {
+  return pCountRef->sz[index];
+}
+
 CWString::operator const char * () const {
   return pCountRef->sz;
 }
@@ -78,7 +82,7 @@ CWString operator + (const char *sz, const CWString &ns1) {
 
 std::istream &operator >> (std::istream &in, CWString &ns) {
   std::string sz;
-  in >> sz;
+//  in >> sz;
   ns = sz.c_str();
   return in;
 }
