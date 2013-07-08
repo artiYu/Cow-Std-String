@@ -9,7 +9,7 @@
 using std::cout;
 using std::endl;
 
-TEST (FirstTest, Assignments) {
+TEST(FirstTest, Assignments) {
   String *s1 = String::create(String::cow, "s1");
   String *s2 = String::create(String::std_sz);
   s2 = s1;
@@ -21,33 +21,33 @@ TEST (FirstTest, Assignments) {
   s3 = s1;
   s4 = s3;
 
-  EXPECT_STREQ ("s1", *s1);
-  EXPECT_STREQ ("s1", *s2);
-  EXPECT_STREQ ("s1", *s3);
-  EXPECT_STREQ ("s1", *s4);
+  EXPECT_STREQ("s1", *s1);
+  EXPECT_STREQ("s1", *s2);
+  EXPECT_STREQ("s1", *s3);
+  EXPECT_STREQ("s1", *s4);
 }
 
-TEST (SecondTest, CheckOfSquareBracketsForStdString) {
+TEST(SecondTest, CheckOfSquareBracketsForStdString) {
   StdString s1 = "Perpetuum mobile";
   int len = strlen (s1);
-  for (int i = 1; i < len; i += 2)
+  for(int i = 1; i < len; i += 2)
     s1[i] = ' ';
-  EXPECT_STREQ ("P r e u m m b l ", s1);
+  EXPECT_STREQ("P r e u m m b l ", s1);
 }
 
-TEST (ThirdTest, Constructors) {
+TEST(ThirdTest, Constructors) {
   StdString s1 = "Perpetuum mobile", s2, s3 (s1);
   CWString s4 = "Perpetuum mobile";
   s2 = s1;
   s1 = s1;
   s4 = s4;
-  EXPECT_STREQ ("Perpetuum mobile", s1);
-  EXPECT_STREQ ("Perpetuum mobile", s2);
-  EXPECT_STREQ ("Perpetuum mobile", s3);
-  EXPECT_STREQ ("Perpetuum mobile", s4);
+  EXPECT_STREQ("Perpetuum mobile", s1);
+  EXPECT_STREQ("Perpetuum mobile", s2);
+  EXPECT_STREQ("Perpetuum mobile", s3);
+  EXPECT_STREQ("Perpetuum mobile", s4);
 }
 
-TEST (ForthTest, CheckOfSquareBracketsForAllString) {
+TEST(ForthTest, CheckOfSquareBracketsForAllString) {
   StdString s1 = "Perpetuum mobile";
   CWString s2 = "Da Vinci";
 
@@ -64,28 +64,28 @@ TEST (ForthTest, CheckOfSquareBracketsForAllString) {
   EXPECT_TRUE(s2[0] == 'D');
 }
 
-TEST (FifthTest, Arithmetics) {
+TEST(FifthTest, Arithmetics) {
   StdString s1 = "Perpetuum";
   CWString s2 = "Da Vinci ";
 
   s1 += " mobile";
   s2 += s1;
 
-  EXPECT_STREQ ("Perpetuum mobile", s1);
-  EXPECT_STREQ ("Da Vinci Perpetuum mobile", s2);
+  EXPECT_STREQ("Perpetuum mobile", s1);
+  EXPECT_STREQ("Da Vinci Perpetuum mobile", s2);
 }
 
-TEST (SixthTest, Comparison) {
+TEST(SixthTest, Comparison) {
   String *s1 = String::create(String::std_sz, "Perpetuum");
   String *s2 = String::create(String::cow, "Vinci");
   String *s3 = String::create(String::std_sz, "Perpetuum mobile");
   String *s4 = String::create(String::cow, "Perpetuum");
-  EXPECT_FALSE (*s1 == *s3);
-  EXPECT_TRUE (*s1 == *s4);
-  EXPECT_TRUE (*s2 > *s3);
-  EXPECT_FALSE (*s2 < *s4);
-  EXPECT_TRUE (*s1 >= *s4);
-  EXPECT_TRUE ("Da Vinci" <= *s2);
+  EXPECT_FALSE(*s1 == *s3);
+  EXPECT_TRUE(*s1 == *s4);
+  EXPECT_TRUE(*s2 > *s3);
+  EXPECT_FALSE(*s2 < *s4);
+  EXPECT_TRUE(*s1 >= *s4);
+  EXPECT_FALSE("Da Vinci" <= *s2);
 }
 
 GTEST_API_ int main(int argc, char **argv) {
