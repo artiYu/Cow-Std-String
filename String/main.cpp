@@ -29,22 +29,14 @@ TEST(FirstTest, Assignments) {
 
 TEST(SecondTest, CheckOfSquareBracketsForStdString) {
   StdString s1 = "Perpetuum mobile";
-<<<<<<< HEAD
   int len = strlen (s1);
-=======
-  int len = strlen(s1);
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
   for(int i = 1; i < len; i += 2)
     s1[i] = ' ';
   EXPECT_STREQ("P r e u m m b l ", s1);
 }
 
 TEST(ThirdTest, Constructors) {
-<<<<<<< HEAD
   StdString s1 = "Perpetuum mobile", s2, s3 (s1);
-=======
-  StdString s1 = "Perpetuum mobile", s2, s3(s1);
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
   CWString s4 = "Perpetuum mobile";
   s2 = s1;
   s1 = s1;
@@ -89,20 +81,12 @@ TEST(SixthTest, Comparison) {
   String *s2 = String::create(String::cow, "Vinci");
   String *s3 = String::create(String::std_sz, "Perpetuum mobile");
   String *s4 = String::create(String::cow, "Perpetuum");
-<<<<<<< HEAD
-=======
-
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
   EXPECT_FALSE(*s1 == *s3);
   EXPECT_TRUE(*s1 == *s4);
   EXPECT_TRUE(*s2 > *s3);
   EXPECT_FALSE(*s2 < *s4);
   EXPECT_TRUE(*s1 >= *s4);
-<<<<<<< HEAD
   EXPECT_FALSE("Da Vinci" <= *s2);
-=======
-  //EXPECT_TRUE("Da Vinci" <= *s2);
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
 }
 
 GTEST_API_ int main(int argc, char **argv) {

@@ -23,23 +23,14 @@ CWString::CWString(const CWString &ns) {
 }
 
 CWString::~CWString() {
-<<<<<<< HEAD
   if(pCountRef->count == 1)
-=======
-  if (pCountRef->count == 1)
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
     delete pCountRef;
   else
     pCountRef->count--;
 }
 
-<<<<<<< HEAD
 const CWString& CWString::operator=(const CWString& ns) {
   if(pCountRef == ns.pCountRef)
-=======
-const CWString& CWString::operator =(const CWString& ns) {
-  if (pCountRef == ns.pCountRef)
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
     return *this;
 
   if(pCountRef->count == 1)
@@ -53,11 +44,7 @@ const CWString& CWString::operator =(const CWString& ns) {
 }
 
 char& CWString::operator[](int index) {
-<<<<<<< HEAD
   if(pCountRef->count > 1) {
-=======
-  if (pCountRef->count > 1) {
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
     CountReferences *new_ref = new CountReferences(pCountRef->sz);
     --pCountRef->count;
     pCountRef = new_ref;
@@ -69,30 +56,17 @@ const char CWString::operator[](int index) const {
   return pCountRef->sz[index];
 }
 
-<<<<<<< HEAD
 CWString::operator const char*() const {
-  return pCountRef->sz;
-}
-
-const CWString& CWString::operator+=(const char *_sz) {
-    if(pCountRef->count > 1) {
-=======
-CWString::operator const char *() const {
   return pCountRef->sz;
 }
 
 const CWString& CWString::operator +=(const char *_sz) {
     if (pCountRef->count > 1) {
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
       CountReferences *new_ref = new CountReferences(pCountRef->sz);
       --pCountRef->count;
       pCountRef = new_ref;
     }
-<<<<<<< HEAD
     char *new_sz = new char[strlen(pCountRef->sz) + strlen(_sz) + 1];
-=======
-    char *new_sz = new char [strlen(pCountRef->sz) + strlen(_sz) + 1];
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
     strcpy(new_sz, pCountRef->sz);
     strcat(new_sz, _sz);
     delete[] pCountRef->sz;
@@ -100,31 +74,19 @@ const CWString& CWString::operator +=(const char *_sz) {
     return *this;
 }
 
-<<<<<<< HEAD
 CWString operator+(const char *sz, const CWString &ns1) {
-=======
-const CWString operator +(const char *sz, const CWString &ns1) {
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
   CWString ns(sz);
   ns += ns1;
   return ns;
 }
 
-<<<<<<< HEAD
 std::istream &operator>>(std::istream &in, CWString &ns) {
-=======
-std::istream &operator >>(std::istream &in, CWString &ns) {
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
   std::string sz;
 //  in >> sz;
   ns = sz.c_str();
   return in;
 }
 
-<<<<<<< HEAD
 std::ostream &operator<<(std::ostream &out, const CWString &ns) {
-=======
-std::ostream &operator <<(std::ostream &out, const CWString &ns) {
->>>>>>> f59196361b53315710c1b096ac2ef4754bca343c
   return out << ns.pCountRef->sz;
 }
