@@ -7,6 +7,8 @@
 StdString::StdString(const char* _sz) {
   sz = new char[strlen(_sz) + 1];
   strcpy(sz, _sz);
+
+  classType = 0;
 }
 
 StdString::~StdString() {
@@ -16,6 +18,12 @@ StdString::~StdString() {
 StdString::StdString(const StdString &std_sz) {
   sz = new char[strlen(std_sz.sz) + 1];
   strcpy(sz, std_sz.sz);
+
+  classType = 0;
+}
+
+const int StdString::getClassType() const {
+  return classType;
 }
 
 const StdString& StdString::operator=(const StdString &std_sz) {
@@ -48,12 +56,6 @@ const StdString& StdString::operator+=(const char *std_sz) {
   delete[] sz;
   sz = new_sz;
   return *this;
-}
-
-StdString operator+(const char *_sz, const StdString &std_sz) {
-  StdString temp(_sz);
-  temp += std_sz;
-  return temp;
 }
 
 std::istream &operator>>(std::istream &in, StdString &std_sz) {

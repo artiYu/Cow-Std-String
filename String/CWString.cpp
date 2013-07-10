@@ -15,11 +15,15 @@ CWString::CountReferences::~CountReferences() {
 
 CWString::CWString(const char* sz) {
   pCountRef = new CountReferences(sz);
+
+  classType = 1;
 }
 
 CWString::CWString(const CWString &ns) {
   pCountRef = ns.pCountRef;
   pCountRef->count++;
+
+  classType = 1;
 }
 
 CWString::~CWString() {
@@ -27,6 +31,10 @@ CWString::~CWString() {
     delete pCountRef;
   else
     pCountRef->count--;
+}
+
+const int CWString::getClassType() const {
+  return classType;
 }
 
 const CWString& CWString::operator=(const CWString& ns) {
@@ -72,12 +80,6 @@ const CWString& CWString::operator +=(const char *_sz) {
     delete[] pCountRef->sz;
     pCountRef->sz = new_sz;
     return *this;
-}
-
-CWString operator+(const char *sz, const CWString &ns1) {
-  CWString ns(sz);
-  ns += ns1;
-  return ns;
 }
 
 std::istream &operator>>(std::istream &in, CWString &ns) {

@@ -17,6 +17,20 @@ String* String::create(int type, const char *sz) {
   }
 }
 
+
+void f(String &ns) {
+  std::cout << ns.getClassType() << std::endl;
+}
+
+String operator+(const String &ns1, const char *sz) {
+  if(ns1.getClassType() == 0)
+    CWString ns(sz);
+  else if(ns1.getClassType() == 1)
+    StdString ns(sz);
+  ns += ns1;
+  return ns1;
+}
+
 bool String::operator==(String &str_sz) const {
   return !strcmp(*this, str_sz) ? true : false;
 }

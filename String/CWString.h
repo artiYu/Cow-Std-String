@@ -15,10 +15,13 @@ class CWString : public String {
     CWString(const CWString &ns);
     ~CWString();
 
+    const int getClassType() const;
+
+
+
     const CWString& operator=(const CWString &ns);
 
     const CWString& operator+=(const char *sz);
-    friend CWString operator+(const char *, const CWString &ns);
 
     char& operator[](int index);
     const char operator[](int index) const;
@@ -30,4 +33,5 @@ class CWString : public String {
 
   private:
     CountReferences* pCountRef;
+    int classType;
 };
