@@ -68,10 +68,7 @@ TEST(ForthTest, CheckOfSquareBracketsForAllString) {
 TEST(FifthTest, Arithmetics) {
   StdString s1 = "Perpetuum";
   CWString s2 = "Da Vinci ";
-  cout << endl << "Cow: " << s2.getClassType();
-  cout << endl << "Std: " << s1.getClassType();
-//  String s3;
-//  s3 = s1 + s2;
+
   s1 += " mobile";
   s2 += s1;
 

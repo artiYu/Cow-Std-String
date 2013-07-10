@@ -23,7 +23,7 @@ String operator+(const String &ns1, const char *sz) {
   else if(ns1.getClassType() == 1)
     StdString ns(sz);
   ns += ns1;
-  return ns1;
+  return ns;
 }
 
 bool String::operator==(String &str_sz) const {
