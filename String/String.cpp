@@ -17,11 +17,6 @@ String* String::create(int type, const char *sz) {
   }
 }
 
-
-void f(String &ns) {
-  std::cout << ns.getClassType() << std::endl;
-}
-
 String operator+(const String &ns1, const char *sz) {
   if(ns1.getClassType() == 0)
     CWString ns(sz);
